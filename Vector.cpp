@@ -18,3 +18,40 @@ Vector2 Vector2::operator*(Matrix2 Mat) const
 	result.Y = X * Mat._21 + Y * Mat._22;
 	return result;
 }
+
+Vector3 Vector3::operator*(float scale) const
+{
+	Vector3 result;
+	result.X = X * scale;
+	result.Y = Y * scale;
+	result.Z = Z * scale;
+	return result;
+}
+
+Vector3 Vector3::operator-(const Vector3& V) const
+{
+	Vector3 result;
+	result.X = X - V.X;
+	result.Y = Y - V.Y;
+	result.Z = Z - V.Z;
+	return result;
+}
+
+
+Vector3 Vector3::operator+(const Vector3& V) const
+{
+	Vector3 result;
+	result.X = X + V.X;
+	result.Y = Y + V.Y;
+	result.Z = Z + V.Z;
+	return result;
+}
+
+Vector3 Vector3::operator*(Matrix3 Mat) const
+{
+	Vector3 result;
+	result.X = X * Mat._11 + Y * Mat._12 + Z * Mat._13;
+	result.Y = X * Mat._21 + Y * Mat._22 + Z * Mat._23;
+	result.Z = X * Mat._31 + Y * Mat._32 + Z * Mat._33;
+	return result;
+}
