@@ -28,18 +28,22 @@ public:
 	static float Dist(const Vector2 &V1, const Vector2 &V2);
 	static float DistSquared(const Vector2 &V1, const Vector2 &V2);
 
+	Vector2 operator *(float scale) const;
 	Vector2 operator *(const Matrix2 Mat) const;
 	bool Equals(const Vector2& V, float Tolerance = KINDA_SMALL_NUMBER) const;
 
-	IntPoint ToIntPoint()
+	IntPoint ToIntPoint() 
 	{
-		return IntPoint(RoundToInt(X), RoundToInt(Y));
+		return IntPoint((int)(X), (int)(Y));
 	}
 
 	float Dot(const Vector2 v) const
 	{
 		return X * v.X + Y * v.Y;
 	}
+
+	Vector2 operator+(const Vector2& V) const;
+	Vector2 operator-(const Vector2& V) const;
 
 };
 
@@ -80,10 +84,6 @@ public:
 	float DistSquared()
 	{
 		return X * X + Y * Y;
-	}
-
-	float DistTo(Vector3 other) {
-		return sqrtf(pow(X - other.X, 2) + pow(Y - other.Y, 2));
 	}
 
 	Vector2 ToVector2()
