@@ -2,34 +2,49 @@
 #include "stdafx.h"
 #include "Mesh.h"
 
-Mesh::~Mesh ()
-{
-	if (NULL != Vertices)
-	{
-		delete[] Vertices;
-		Vertices = NULL;
-	}
+//Mesh::~Mesh()
+//{
+//	if (NULL != Indices)
+//	{
+//		delete[] Indices;
+//		Indices = NULL;
+//		ISize = 0;
+//	}
+//
+//	if (NULL != Vertices)
+//	{
+//		delete[] Vertices;
+//		Vertices = NULL;
+//		VSize = 0;
+//	}
+//}
 
-	if (NULL != Indices)
-	{
-		delete[] Indices;
-		Indices = NULL;
-	}
-}
-
-void Mesh::SetVertetices (Vertex * NewVertices, size_t NewSize)
-{
-	if (NewSize < 3)
-		return;
-	Vertices = NewVertices;
-	VSize = NewSize;
-}
-
-void Mesh::SetIndices (int * NewIndices, size_t NewSize)
-{
-	if (NewSize % 3 != 0)
-		return;
-
-	Indices = NewIndices;
-	ISize = NewSize;
-}
+//void Mesh::SetVertices(Vertex* NewVertices, size_t NewSize)
+//{
+//	if (NULL == NewVertices) return;
+//
+//	if (NULL != Vertices)
+//	{
+//		delete[] Vertices;
+//		Vertices = NULL;
+//		VSize = 0;
+//	}
+//
+//	Vertices = NewVertices;
+//	VSize = NewSize;
+//}
+//
+//void Mesh::SetIndices(int * NewIndices, size_t NewSize)
+//{
+//	if (NULL == NewIndices) return;
+//
+//	if (NULL != Indices)
+//	{
+//		delete[] Indices;
+//		Indices = NULL;
+//		ISize = 0;
+//	}
+//
+//	Indices = NewIndices;
+//	ISize = NewSize;
+//}

@@ -148,7 +148,6 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 	case WM_CREATE:
 		{
 			InitGDI(hWnd);
-			InitFrame();
 		}
 		break;
     case WM_PAINT:
